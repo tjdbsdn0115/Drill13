@@ -43,10 +43,11 @@ def handle_events():
         elif item_selection_open:
             if event.type == SDL_KEYDOWN:
                 if event.key == SDLK_0:
+                    boy.ball_size = None
                     item_selection_open = False
                     return
                 if event.key in (SDLK_1, SDLK_2):
-                    boy.fire_ball(1 if event.key == SDLK_1 else 2)
+                    boy.ball_size = 1 if event.key == SDLK_1 else 2
                     item_selection_open = False
                     return
             continue
